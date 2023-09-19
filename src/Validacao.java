@@ -1,6 +1,6 @@
 public class Validacao {
 
-    public static String cpf(String_cpf){
-        return _cpf;
+    public static boolean cpf(String _cpf){
+        return true;
     }
 }
