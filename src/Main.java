@@ -1,36 +1,50 @@
+import javax.swing.*;
+
 public class Main {
     public static void main(String[] args) {
+        //Turitsta 1
 
         //Clases Objeto Construtor
-        Turista mechileiro = new Turista("Maia");
+
+        Turista mochileiro = new Turista();
 
         //Definir formato do objeto
-        mochileiro.setNome("Agnes");
-        mochileiro.setCpf("123");
+        mochileiro.setNome(JOptionPane.showInputDialog("Entre com o nome:"));
+        System.out.println("Nome OK");
+        mochileiro.setCpf(JOptionPane.showInputDialog("Entre com o CPF:"));
+        if (Util.validaCPF(mochileiro.getCpf())) {
+            System.out.println("CPF OK");
+        } else {
+            System.out.println("CPF Inválido!");
+            mochileiro.setCpf("CPF Invalido Tente Novamente");
+        }
 
-        Turista mechileira = new Turista();
-        mechileira.setNome("Ana");
-        mechileira.setCpf("234");
-        //Atribuição indireta
+        //Turista 2
 
-        String nome = JOptionPane.showInputDialog("Entre com o nome: ");
-        mochileira.setNome(nome);
-        System.out.println("Nome do objeto é: " + mochileira.getNome());
-        //Fazer o mesmo para capturar o cpf deste objeto
-        String cpf = JOptionPane.showInputDialog("Entre com o CPF: ");
-        mochileira.setCpf(cpf);
-        System.out.println("O CPF é: " + mochileira.getCpf());
+        //Clases Objeto Construtor
+        Turista mochileira = new Turista();
 
-        //Novo objeto
-        nome = JOptionPane.showInputDialog("Qual o seu nome: ");
-        // Criando objeto com construtor recebendo nome
-        Turista outroTurista = new Turista(nome);
-        System.out.println("O nome deste Turista é: " + outroTurista.getNome());
-        // Fazer o  recebimento do cpf para este turista
-        cpf = JOptionPane.showInputDialog("Digite seu cpf: ");
-        if(Validacao.cpf(cpf))
-            outroTurista.setCpf(cpf);
-        else
-        outroTurista.setCpf(Validacao.cpf(cpf));
-        System.out.println("O cpf digitado foi: " + cpf);
+        mochileira.setNome(JOptionPane.showInputDialog("Entre com o nome:"));
+        System.out.println("Nome OK");
+        mochileira.setCpf(JOptionPane.showInputDialog("Entre com o CPF:"));
+        if (Util.validaCPF(mochileira.getCpf())) {
+            System.out.println("CPF OK");
+        } else {
+            System.out.println("CPF Inválido!");
+            mochileira.setCpf("CPF Invalido Tente Novamente");
+        }
+
+
+        //Saida
+
+        //Turista 1
+        System.out.println("Turista 1");
+        System.out.println("Nome : " + mochileiro.getNome());
+        System.out.println("CPF : " + mochileiro.getCpf());
+
+        //Turista 2
+        System.out.println("Turista 2");
+        System.out.println("Nome : " + mochileira.getNome());
+        System.out.println("CPF : " + mochileira.getCpf());
+    }
 }

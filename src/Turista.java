@@ -18,7 +18,7 @@ public class Turista {
 
     //Sobrecarga de construtor personalizado
 
-    Turista(String_nome){
+    Turista(String _nome){
         this.nome = _nome;
 
     }
